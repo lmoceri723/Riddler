@@ -77,8 +77,14 @@ public class Riddler {
     public String decryptFour(String encrypted) {
         String decrypted = "";
 
-        // TODO: Complete the decryptFour() function.
-        // You've stumped me, Mr. Blick!
+        // We identified #4 as a shift to dingbat characters
+        for (int index = 0; index < encrypted.length(); index++) {
+            char current = encrypted.charAt(index);
+            // Subtract the lowest dingbat character, then add the lowest ascii letter to get the decrypted character
+            current = (char) (current - '\u2700' + 'A');
+            // Concatenate
+            decrypted += current;
+        }
 
         return decrypted;
     }
